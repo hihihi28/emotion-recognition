@@ -19,13 +19,59 @@
 }
 
 .App-header {
-  background-color: #91a4ca;
+  background-color: #37486b;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(250, 7, 7);
+  color: white;
 }
 
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.content {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các thành phần xuống dòng khi màn hình hẹp */
+  justify-content: center;
+  gap: 20px; /* Khoảng cách giữa webcam và bảng dự đoán */
+}
+
+.camera-container {
+  flex: 1 1 640px; /* Camera chiếm 1 phần, tối thiểu 640px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Prediction {
+  flex: 1 1 300px; /* Bảng dự đoán chiếm 1 phần, tối thiểu 300px */
+  max-width: 500px; /* Đặt chiều rộng tối đa */
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* Chuyển từ hàng ngang sang cột khi màn hình hẹp */
+    align-items: center;
+  }
+
+  .Prediction {
+    max-width: 100%; /* Đảm bảo bảng dự đoán không vượt quá chiều rộng màn hình */
+    text-align: left;
+  }
+
+  .camera-container {
+    width: 100%; /* Camera chiếm toàn bộ chiều rộng màn hình */
+  }
+}

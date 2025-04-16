@@ -79,118 +79,79 @@ function App() {
 
   return (
     <div className="App">
-      <h1> Cười cái tao xem nào </h1>
-      <Webcam
-        ref={webcamRef}
-        style={{
-          position: "absolute",
-          marginLeft: "auto",
-          marginRight: "auto",
-          left: 0,
-          right: 600,
-          top:20,
-          textAlign: "center",
-          zindex: 9,
-          width: 640,
-          height: 480,
-        }}
-      />
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: "absolute",
-          marginLeft: "auto",
-          marginRight: "auto",
-          left: 0,
-          right: 600,
-          top:20,
-          textAlign: "center",
-          zindex: 9,
-          width: 640,
-          height: 480,
-        }}
-      />
-      
-      {/* Phần Header hiển thị logo và bảng dự đoán cảm xúc */}
-      <header className="App-header">
-        <img src={logo} 
-        className="App-logo" 
-        alt="logo"
-        style={{
-          position: "absolute",
-          marginLeft: "auto",
-          marginRight: "auto",
-          bottom:10,
-          left: 0,
-          right: 0,
-          width: 150,
-          height: 150,
-        }}
-        />   
-        <div className="Prediction" style={{
-          position:"absolute",
-          right:100,
-          width:500,
-          top: 60
-        }}>
-          <label htmlFor="Angry" style={{ color: "red" }}>Angry{" "}</label>
-          <progress id="Angry" value="0" max="100">0%</progress>
-          <br /><br />
-          <label htmlFor="Neutral" style={{ color: "lightgreen" }}>
-            Neutral{" "}
-          </label>
-          <progress id="Neutral" value="0" max="100">
-            0%
-          </progress>
-          <br /><br />
-          <label htmlFor="Happy" style={{ color: "orange" }}>
-            Happy{" "}
-          </label>
-          <progress id="Happy" value="0" max="100">
-            0%
-          </progress>
-          <br /><br />
-          <label htmlFor="Fear" style={{ color: "lightblue" }}>
-            Fear{" "}
-          </label>
-          <progress id="Fear" value="0" max="100">
-            0%
-          </progress>
-          <br /><br />
-          <label htmlFor="Surprise" style={{ color: "yellow" }}>
-            Surprised{" "}
-          </label>
-          <progress id="Surprise" value="0" max="100">
-            0%
-          </progress>
-          <br /><br />
-          <label htmlFor="Sad" style={{ color: "gray" }}>
-            Sad{" "}
-          </label>
-          <progress id="Sad" value="0" max="100">
-            0%
-          </progress>
-          <br /><br />
-          <label htmlFor="Disgust" style={{ color: "pink" }}>
-            Disgusted{" "}
-          </label>
-          <progress id="Disgust" value="0" max="100">
-            0%
-          </progress>
-        </div>
-        <input
-          id="emotion_text"
-          name="emotion_text"
-          defaultValue="Neutral"
+      <h1 style={{ marginBottom: "100px" }}>Cười cái tao xem nào</h1>
+  
+      <div className="content">
+        <div className="camera-container">
+        <div style={{ position: "relative", width: 640, height: 480 }}>
+        <Webcam
+          ref={webcamRef}
           style={{
+            borderRadius: "12px",
             position: "absolute",
-            width: 200,
-            height: 50,
-            bottom: 60,
-            left: 300,
-            fontSize: "30px",
-          }}></input>
-      </header>
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 1,
+          }}
+        />
+        <canvas
+          ref={canvasRef}
+          style={{
+            borderRadius: "12px",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 2,
+          }}
+        />
+        <input
+            id="emotion_text"
+            name="emotion_text"
+            defaultValue="Neutral"
+            style={{
+              top:100,
+              width: 200,
+              height: 50,
+              bottom: 60,
+              left: 300,
+              fontSize: "30px",
+            }}
+        />
+      </div>
+
+        </div>
+  
+        <header className="App-header">
+          <div className="Prediction">
+            <label htmlFor="Angry" style={{ color: "red" }}>Angry{" "}</label>
+            <progress id="Angry" value="0" max="100">0%</progress>
+            <br /><br />
+            <label htmlFor="Neutral" style={{ color: "lightgreen" }}>Neutral{" "}</label>
+            <progress id="Neutral" value="0" max="100">0%</progress>
+            <br /><br />
+            <label htmlFor="Happy" style={{ color: "orange" }}>Happy{" "}</label>
+            <progress id="Happy" value="0" max="100">0%</progress>
+            <br /><br />
+            <label htmlFor="Fear" style={{ color: "lightblue" }}>Fear{" "}</label>
+            <progress id="Fear" value="0" max="100">0%</progress>
+            <br /><br />
+            <label htmlFor="Surprise" style={{ color: "yellow" }}>Surprised{" "}</label>
+            <progress id="Surprise" value="0" max="100">0%</progress>
+            <br /><br />
+            <label htmlFor="Sad" style={{ color: "gray" }}>Sad{" "}</label>
+            <progress id="Sad" value="0" max="100">0%</progress>
+            <br /><br />
+            <label htmlFor="Disgust" style={{ color: "pink" }}>Disgusted{" "}</label>
+            <progress id="Disgust" value="0" max="100">0%</progress>
+          </div>
+  
+          
+        </header>
+      </div>
     </div>
   );
 }
