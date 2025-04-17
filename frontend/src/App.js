@@ -79,14 +79,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1 style={{ marginBottom: "100px" }}>Cười cái tao xem nào</h1>
-  
+      <h1 style={{ marginBottom: "20px" }}>Cười cái tao xem nào</h1>
+
       <div className="content">
         <div className="camera-container">
-        <div style={{ position: "relative", width: 640, height: 480 }}>
-        <Webcam
-          ref={webcamRef}
-          style={{
+          <div style={{ position: "relative", width: 640, height: 480 }}>
+            <Webcam
+            
+            ref={webcamRef}
+            style={{
             borderRadius: "12px",
             position: "absolute",
             top: 0,
@@ -94,11 +95,11 @@ function App() {
             width: "100%",
             height: "100%",
             zIndex: 1,
-          }}
-        />
-        <canvas
-          ref={canvasRef}
-          style={{
+            }}
+            />
+            <canvas
+            ref={canvasRef}
+            style={{
             borderRadius: "12px",
             position: "absolute",
             top: 0,
@@ -106,53 +107,66 @@ function App() {
             width: "100%",
             height: "100%",
             zIndex: 2,
-          }}
-        />
-        <input
-            id="emotion_text"
-            name="emotion_text"
-            defaultValue="Neutral"
-            style={{
-              top:100,
+            }}
+            /> 
+          </div> 
+        
+          <div className="bottom-container">
+            <input
+              id="emotion_text"
+              name="emotion_text"
+              defaultValue="Neutral"
+              readOnly
+              style={{
               width: 200,
               height: 50,
               bottom: 60,
               left: 300,
-              fontSize: "30px",
-            }}
-        />
-      </div>
+              fontSize: "40px",
+              borderRadius: "10px",
+              textAlign: "center", // Căn giữa theo chiều ngang
+              lineHeight: "50px", // Căn giữa theo chiều dọc (bằng chiều cao của ô)
+              }}
+            />
+          </div>
+        </div> {/* End of camera-container */}
 
-        </div>
-  
         <header className="App-header">
           <div className="Prediction">
-            <label htmlFor="Angry" style={{ color: "red" }}>Angry{" "}</label>
-            <progress id="Angry" value="0" max="100">0%</progress>
-            <br /><br />
-            <label htmlFor="Neutral" style={{ color: "lightgreen" }}>Neutral{" "}</label>
-            <progress id="Neutral" value="0" max="100">0%</progress>
-            <br /><br />
-            <label htmlFor="Happy" style={{ color: "orange" }}>Happy{" "}</label>
-            <progress id="Happy" value="0" max="100">0%</progress>
-            <br /><br />
-            <label htmlFor="Fear" style={{ color: "lightblue" }}>Fear{" "}</label>
-            <progress id="Fear" value="0" max="100">0%</progress>
-            <br /><br />
-            <label htmlFor="Surprise" style={{ color: "yellow" }}>Surprised{" "}</label>
-            <progress id="Surprise" value="0" max="100">0%</progress>
-            <br /><br />
-            <label htmlFor="Sad" style={{ color: "gray" }}>Sad{" "}</label>
-            <progress id="Sad" value="0" max="100">0%</progress>
-            <br /><br />
-            <label htmlFor="Disgust" style={{ color: "pink" }}>Disgusted{" "}</label>
-            <progress id="Disgust" value="0" max="100">0%</progress>
-          </div>
-  
-          
+            <div className="progress-item">
+              <label htmlFor="Angry">Angry  </label>
+              <progress id="Angry" value="0" max="100" />
+            </div>
+            <div className="progress-item">
+              <label htmlFor="Neutral">Neutral  </label>
+              <progress id="Neutral" value="0" max="100" />
+            </div>
+            <div className="progress-item">
+              <label htmlFor="Happy">Happy  </label>
+              <progress id="Happy" value="0" max="100" />
+            </div>
+            <div className="progress-item">
+              <label htmlFor="Fear">Fear  </label>
+              <progress id="Fear" value="0" max="100" />
+            </div>
+            <div className="progress-item">
+              <label htmlFor="Surprise">Surprised  </label>
+              <progress id="Surprise" value="0" max="100" />
+            </div>
+            <div className="progress-item">
+              <label htmlFor="Sad">Sad  </label>
+              <progress id="Sad" value="0" max="100" />
+            </div>
+            <div className="progress-item">
+              <label htmlFor="Disgust">Disgusted  </label>
+              <progress id="Disgust" value="0" max="100" />
+            </div>
+          </div>  {/* End of Prediction */}
         </header>
-      </div>
-    </div>
+
+      </div> {/* End of content */}
+
+    </div> // End of App
   );
 }
 

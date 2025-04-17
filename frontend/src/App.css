@@ -1,12 +1,20 @@
 .App {
   text-align: center;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  
+  background-color: #d2d7f4;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 .Prediction {
-  font-size: 30px;
-  text-shadow: 0 0 3px #926850, 0 0 5px #060b0c;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #7d96d8;
+  font-size: 40px;
+  text-shadow: 0 0 3px #926850, 0 0 5px #3d3f86;
+  text-align: left;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -19,14 +27,10 @@
 }
 
 .App-header {
-  background-color: #37486b;
-  min-height: 100vh;
+  height:auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
 .App-link {
@@ -45,21 +49,26 @@
   display: flex;
   flex-wrap: wrap; /* Cho phép các thành phần xuống dòng khi màn hình hẹp */
   justify-content: center;
-  gap: 20px; /* Khoảng cách giữa webcam và bảng dự đoán */
+  gap: 20px; /* Giảm khoảng cách giữa các thành phần */
+  margin-bottom: 0; /* Loại bỏ khoảng cách thừa bên dưới */
 }
 
-.camera-container {
-  flex: 1 1 640px; /* Camera chiếm 1 phần, tối thiểu 640px */
+.camera-container { 
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.Prediction {
-  flex: 1 1 300px; /* Bảng dự đoán chiếm 1 phần, tối thiểu 300px */
-  max-width: 500px; /* Đặt chiều rộng tối đa */
-  text-align: left;
+.bottom-container {
+  padding: 40px;
+  margin-top: 20px; /* Tạo khoảng cách giữa webcam và bottom-container */
+  display: flex; /* Kích hoạt Flexbox */
+  justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  height: auto; /* Đặt chiều cao cụ thể nếu cần */
 }
+
+
 @media (max-width: 768px) {
   .content {
     flex-direction: column; /* Chuyển từ hàng ngang sang cột khi màn hình hẹp */
@@ -75,3 +84,12 @@
     width: 100%; /* Camera chiếm toàn bộ chiều rộng màn hình */
   }
 }
+
+/* Đặt màu cho từng cảm xúc */
+.progress-item label[for="Angry"] { color: #ff6b81; }
+.progress-item label[for="Neutral"] { color: #a8e6cf; }
+.progress-item label[for="Happy"] { color: #ffd3b6; }
+.progress-item label[for="Fear"] { color: #d5aaff; }
+.progress-item label[for="Surprise"] { color: #ffaaa5; }
+.progress-item label[for="Sad"] { color: #c3aed6; }
+.progress-item label[for="Disgust"] { color: #f5c7f7; }
